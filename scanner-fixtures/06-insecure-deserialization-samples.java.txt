@@ -1,0 +1,9 @@
+// Scanner fixture only. Do not execute in production.
+import java.io.*;
+
+public class InsecureDeserializationFixture {
+    public Object parse(byte[] data) throws Exception {
+        ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(data));
+        return ois.readObject();
+    }
+}

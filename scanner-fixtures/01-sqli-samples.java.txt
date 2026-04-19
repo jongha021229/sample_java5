@@ -1,0 +1,9 @@
+// Scanner fixture only. Do not execute in production.
+public class SqliFixture {
+    public void findUser(String userInput) {
+        String query1 = "SELECT * FROM users WHERE name = '" + userInput + "'";
+        String query2 = "SELECT * FROM orders WHERE id = " + userInput;
+        String query3 = "DELETE FROM accounts WHERE account_id='" + userInput + "'";
+        System.out.println(query1 + query2 + query3);
+    }
+}

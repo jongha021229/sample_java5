@@ -1,0 +1,14 @@
+// Scanner fixture only. Do not execute in production.
+import java.nio.file.*;
+
+public class PathTraversalFixture {
+    public String load(String filename) throws Exception {
+        Path base = Paths.get("/app/data/");
+        Path target = base.resolve(filename);
+        return Files.readString(target);
+    }
+
+    public String load2(String filename) throws Exception {
+        return Files.readString(Paths.get("/var/www/uploads/" + filename));
+    }
+}

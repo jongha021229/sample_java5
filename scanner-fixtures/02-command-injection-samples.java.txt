@@ -1,0 +1,8 @@
+// Scanner fixture only. Do not execute in production.
+public class CommandInjectionFixture {
+    public void run(String userInput) throws Exception {
+        Runtime.getRuntime().exec("cmd /c dir " + userInput);
+        ProcessBuilder pb = new ProcessBuilder("sh", "-c", "ls " + userInput);
+        pb.start();
+    }
+}
